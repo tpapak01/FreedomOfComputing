@@ -1,10 +1,14 @@
 package nl.tudelft.trustchain.FOC
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import nl.tudelft.ipv8.android.IPv8Android
+import nl.tudelft.trustchain.FOC.databinding.BlankFragmentBinding
+import nl.tudelft.trustchain.common.DemoCommunity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,11 @@ class BlankFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding: BlankFragmentBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -30,11 +39,28 @@ class BlankFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.blank_fragment, container, false)
+        _binding = BlankFragmentBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.findPeersButton.setOnClickListener { view ->
+            val ipv8 = IPv8Android.getInstance()
+            val demoCommunity = ipv8.getOverlay<DemoCommunity>()!!
+            val peers = demoCommunity.getPeers()
+
+            Log.i("personal", "n:" + peers.size.toString())
+            for (peer in peers) {
+                Log.i("personal", peer.mid)
+            }
+        }
     }
 
     companion object {
