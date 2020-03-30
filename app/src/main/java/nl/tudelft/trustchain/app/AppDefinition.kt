@@ -3,7 +3,7 @@ package nl.tudelft.trustchain.app
 import android.app.Activity
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
-import com.example.FOC.MainActivityFOC
+import nl.tudelft.trustchain.FOC.MainActivityFOC
 import nl.tudelft.trustchain.common.R
 import nl.tudelft.trustchain.debug.DebugActivity
 import nl.tudelft.trustchain.explorer.ui.TrustChainExplorerActivity
