@@ -60,6 +60,8 @@ class BlankFragment : Fragment() {
             for (peer in peers) {
                 Log.i("personal", peer.mid)
             }
+
+            demoCommunity.broadcastGreeting();
         }
     }
 

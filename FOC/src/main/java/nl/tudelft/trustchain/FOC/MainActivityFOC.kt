@@ -14,29 +14,12 @@ import kotlin.math.roundToInt
 
 
 class MainActivityFOC : AppCompatActivity() {
-    //private val binding by viewBinding(BlankFragment::bind)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_foc)
         setSupportActionBar(toolbar)
-
-        //binding = BlankFragment.
-
-        /*
-        var b1 = findViewById<Button>(R.id.findPeersButton)
-        b1.setOnClickListener { view ->
-            val ipv8 = IPv8Android.getInstance()
-            val demoCommunity = ipv8.getOverlay<DemoCommunity>()!!
-            val peers = demoCommunity.getPeers()
-
-            Log.i("personal", "n:" + peers.size.toString())
-            for (peer in peers) {
-                Log.i("personal", peer.mid)
-            }
-        }
-
-         */
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -46,27 +29,12 @@ class MainActivityFOC : AppCompatActivity() {
 
         MainFunctionsJava.requestPermission(this);
 
-        /*
-        lifecycleScope.launchWhenStarted {
-            while (isActive) {
-                val ipv8 = IPv8Android.getInstance()
-                val demoCommunity = ipv8.getOverlay<DemoCommunity>()!!
-                val peers = demoCommunity.getPeers()
 
-                Log.i("personal", "n:" + peers.size.toString())
-                for (peer in peers) {
-                    Log.i("personal", peer.mid)
-                }
-                //printPeersInfo(demoCommunity);
-            }
-        }
-
-         */
     }
 
     private fun printPeersInfo(overlay: Overlay) {
         val peers = overlay.getPeers()
-        Log.i("personal", overlay::class.simpleName + ": ${peers.size} peers")
+        //Log.i("personal", overlay::class.simpleName + ": ${peers.size} peers")
         for (peer in peers) {
             val avgPing = peer.getAveragePing()
             val lastRequest = peer.lastRequest
