@@ -1,4 +1,4 @@
-package com.example.FOC
+package nl.tudelft.trustchain.FOC
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -34,7 +34,7 @@ class BlankFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false)
+        return inflater.inflate(R.layout.blank_fragment, container, false)
     }
 
     companion object {

@@ -1,4 +1,4 @@
-package com.example.FOC
+package nl.tudelft.trustchain.FOC
 
 import org.junit.Test
 

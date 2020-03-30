@@ -1,4 +1,4 @@
-package com.example.FOC;
+package nl.tudelft.trustchain.FOC;
 
 import android.Manifest;
 import android.app.Activity;
@@ -34,8 +34,7 @@ import dalvik.system.DexClassLoader;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class MainFunctionsInJava {
-
+public class MainFunctionsJava {
     final static int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 0;
 
     public static void requestPermission(Activity thisActivity){
@@ -43,14 +42,14 @@ public class MainFunctionsInJava {
         if (ContextCompat.checkSelfPermission(thisActivity,
             Manifest.permission.WRITE_EXTERNAL_STORAGE)
             != PackageManager.PERMISSION_GRANTED) {
-                // No explanation needed; request the permission
-                ActivityCompat.requestPermissions(thisActivity,
-                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+            // No explanation needed; request the permission
+            ActivityCompat.requestPermissions(thisActivity,
+                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                MY_PERMISSIONS_REQUEST_READ_CONTACTS);
 
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
+            // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+            // app-defined int constant. The callback method gets the
+            // result of the request.
 
         } else {
             // Permission has already been granted
@@ -58,6 +57,7 @@ public class MainFunctionsInJava {
     }
 
     public static void getTorrent(){
+
         //String uri = "magnet:?xt=urn:btih:86d0502ead28e495c9e67665340f72aa72fe304e&dn=Frostwire.5.3.6.+%5BWindows%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Fopen.demonii.com%3A1337";
         //String uri = "magnet:?xt=urn:btih:737d38ed01da1df727a3e0521a6f2c457cb812de&dn=HOME+-+a+film+by+Yann+Arthus-Bertrand+%282009%29+%5BEnglish%5D+%5BHD+MP4%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969";
         //String uri = "magnet:?xt=urn:btih:a83cc13bf4a07e85b938dcf06aa707955687ca7c";

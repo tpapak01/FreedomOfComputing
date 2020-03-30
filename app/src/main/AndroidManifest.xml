@@ -38,7 +38,7 @@
             android:parentActivityName=".ui.dashboard.DashboardActivity" />
 
         <activity
-            android:name="com.example.FOC.MainActivityFOC"
+            android:name="nl.tudelft.trustchain.FOC.MainActivityFOC"
             android:parentActivityName=".ui.dashboard.DashboardActivity" />
 
         <service android:name="nl.tudelft.trustchain.app.service.TrustChainService" />
