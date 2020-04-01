@@ -46,6 +46,11 @@ class BlankFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = BlankFragmentBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        //val ipv8 = IPv8Android.getInstance()
+        //val demoCommunity = ipv8.getOverlay<DemoCommunity>()!!
+        //demoCommunity.giveContext(activity?.applicationContext)
+
         return view
     }
 
